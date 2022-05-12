@@ -126,7 +126,7 @@ const AddString = (props) => {
 	return (
 		<Card>
 			<form>
-				<div className="text-5xl welcometext">
+				<div className="welcometext font-bold text-4xl">
 					Welcome to String Comparison!
 				</div>
 				<div>
