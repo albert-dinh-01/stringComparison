@@ -17,8 +17,10 @@ module.exports = {
 			sm: { max: "639px" },
 			// => @media (max-width: 639px) { ... }
 
-			lgMin: "1024px"
+			lgMin: "1024px",
 			// => @media (min-width: 1024px) { ... }
+
+			xsm: { max: "340px" }
 		},
 		fontSize: {
 			textLgMin: ["50px", "45px"],
