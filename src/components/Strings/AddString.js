@@ -25,8 +25,8 @@ const style = {
 	heigh: "auto",
 	maxHeight: "75vh",
 	overflowY: "auto",
-	"@media (max-width: 280px)": {
-		width: "270px"
+	"@media (max-width: 380px)": {
+		width: "260px"
 	}
 };
 
