@@ -21,7 +21,7 @@ module.exports = {
 			// => @media (min-width: 1024px) { ... }
 
 			xsm: { max: "270px" }
-			// => @media (max-width: 220px) { ... }
+			// => @media (max-width: 270px) { ... }
 		},
 		fontSize: {
 			textLgMin: ["50px", "45px"],
