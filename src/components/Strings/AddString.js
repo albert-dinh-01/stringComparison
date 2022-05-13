@@ -8,13 +8,15 @@ import HistoryIcon from "@mui/icons-material/History";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import json2mq from "json2mq";
 
 const style = {
 	position: "absolute",
 	top: "50%",
 	left: "50%",
 	transform: "translate(-50%, -50%)",
-	width: 400,
+	width: 500,
 	bgcolor: "background.paper",
 	borderRadius: "20px",
 	boxShadow: 24,
@@ -22,7 +24,10 @@ const style = {
 	padding: "10px",
 	heigh: "auto",
 	maxHeight: "75vh",
-	overflowY: "auto"
+	overflowY: "auto",
+	"@media (max-width: 280px)": {
+		width: "270px"
+	}
 };
 
 const theme = createTheme({
@@ -49,6 +54,12 @@ const AddString = (props) => {
 	const [areStringsEqual, setAreStringsEqual] = useState(false);
 	const [onHistory, setOnHistory] = useState(false);
 	const [comparedPairs, setComparedPairs] = useState([]);
+
+	const matches = useMediaQuery(
+		json2mq({
+			minWidth: 600
+		})
+	);
 
 	useEffect(() => {
 		const data = localStorage.getItem("my-pairs");
@@ -238,7 +249,7 @@ const AddString = (props) => {
 							aria-labelledby="parent-modal-title"
 							aria-describedby="parent-modal-description"
 						>
-							<Box sx={{ ...style, width: 500 }}>
+							<Box sx={style}>
 								<h1 className="text-3xl" id="historyTitle">
 									String pairs
 								</h1>
