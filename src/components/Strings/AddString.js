@@ -149,8 +149,36 @@ const AddString = (props) => {
 	return (
 		<Card>
 			<form>
-				<div className="welcometext font-bold text-4xl">
-					Welcome to String Comparison!
+				<div className="m-0 p-0 flex justify-between" id="headerWithInfo">
+					<div className="welcometext font-bold text-4xl">
+						Welcome to String Comparison!
+					</div>
+					<div className="p-0 m-0 bg-red-300" id="info">
+						<IconButton
+							color="secondary"
+							aria-label="add an alarm"
+							onClick={(e) => {
+								handleOpenInfo(e);
+							}}
+						>
+							<InfoIcon />
+						</IconButton>
+						<Modal
+							open={openInfo}
+							onClose={handleCloseInfo}
+							aria-labelledby="parent-modal-title"
+							aria-describedby="parent-modal-description"
+						>
+							<Box sx={style}>
+								<strong>Why String Comparison?</strong>
+								<p>
+									{" "}
+									String Comparison was built because I find myself compare two
+									strings very frequently
+								</p>
+							</Box>
+						</Modal>
+					</div>
 				</div>
 				<div>
 					<label className="sr-only" htmlFor="inlineFormInputGrop">
@@ -305,32 +333,6 @@ const AddString = (props) => {
 					</span>
 				</a>{" "}
 				&copy; 2022
-				<div className="p-0 m-0" id="info">
-					<IconButton
-						color="secondary"
-						aria-label="add an alarm"
-						onClick={(e) => {
-							handleOpenInfo(e);
-						}}
-					>
-						<InfoIcon />
-					</IconButton>
-					<Modal
-						open={openInfo}
-						onClose={handleCloseInfo}
-						aria-labelledby="parent-modal-title"
-						aria-describedby="parent-modal-description"
-					>
-						<Box sx={style}>
-							<strong>Why String Comparison?</strong>
-							<p>
-								{" "}
-								String Comparison was built because I find myself compare two
-								strings very frequently
-							</p>
-						</Box>
-					</Modal>
-				</div>
 			</div>
 		</Card>
 	);
