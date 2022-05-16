@@ -9,8 +9,6 @@ import InfoIcon from "@mui/icons-material/Info";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import json2mq from "json2mq";
 import IconButton from "@mui/material/IconButton";
 
 const style = {
@@ -183,7 +181,7 @@ const AddString = (props) => {
 								<p className="text-left">
 									{" "}
 									String Comparison was built because I find myself compare two
-									strings very frequently
+									strings very frequently.
 								</p>
 								<br />
 								<p className="text-left" id="techUsed">
@@ -314,9 +312,9 @@ const AddString = (props) => {
 							aria-describedby="parent-modal-description"
 						>
 							<Box sx={style}>
-								<h1 className="text-3xl" id="historyTitle">
-									String pairs
-								</h1>
+								<p className="text-3xl" id="historyTitle">
+									Comparison history
+								</p>
 								<div id="stringList">
 									{comparedPairs.map((pair) => (
 										<div className="flex justify-between bg-emerald-100 rounded-lg m-3.5 p-2">
