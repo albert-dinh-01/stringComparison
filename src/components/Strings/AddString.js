@@ -67,12 +67,6 @@ const AddString = (props) => {
 		setOpenInfo(false);
 	};
 
-	const matches = useMediaQuery(
-		json2mq({
-			minWidth: 600
-		})
-	);
-
 	useEffect(() => {
 		const data = localStorage.getItem("my-pairs");
 		if (data) {
@@ -120,6 +114,16 @@ const AddString = (props) => {
 
 	const onCompare = (event) => {
 		event.preventDefault();
+		var today = new Date();
+		var date =
+			today.getFullYear() +
+			"-" +
+			(today.getMonth() + 1) +
+			"-" +
+			today.getDate();
+		var time =
+			today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		var dateTime = date + " " + time;
 		if (
 			enteredString1 === enteredString2 &&
 			enteredString1 !== "" &&
@@ -130,7 +134,8 @@ const AddString = (props) => {
 				{
 					s1: enteredString1,
 					s2: enteredString2,
-					result: true
+					result: true,
+					date: dateTime
 				}
 			]);
 			setAreStringsEqual(true);
@@ -140,7 +145,8 @@ const AddString = (props) => {
 				{
 					s1: enteredString1,
 					s2: enteredString2,
-					result: false
+					result: false,
+					date: dateTime
 				}
 			]);
 			setAreStringsEqual(false);
@@ -326,6 +332,12 @@ const AddString = (props) => {
 													id="string2"
 												>
 													String 2: {pair.s2}
+												</div>
+												<div
+													className="p-0 m-0 text-left italic overFlowTest"
+													id="dateTime"
+												>
+													Time: {pair.date}
 												</div>
 											</div>
 											<div className="p-0 m-0 text-left" id="outcome">
