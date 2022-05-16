@@ -156,7 +156,8 @@ const AddString = (props) => {
 	};
 
 	const deletePair = (uid) => {
-		console.log("unique uid mofo", uid);
+		const newList = comparedPairs.filter((item) => item.id1 !== uid);
+		setComparedPairs(newList);
 	};
 
 	return (
