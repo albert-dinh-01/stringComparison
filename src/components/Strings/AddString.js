@@ -90,6 +90,7 @@ const AddString = (props) => {
 		e.preventDefault();
 		setOnHistory(true);
 	};
+
 	const handleCloseHistory = (e) => {
 		e.preventDefault();
 		setOnHistory(false);
