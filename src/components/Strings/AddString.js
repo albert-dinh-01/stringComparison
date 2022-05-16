@@ -170,11 +170,18 @@ const AddString = (props) => {
 							aria-describedby="parent-modal-description"
 						>
 							<Box sx={style}>
-								<strong>Why String Comparison?</strong>
-								<p>
+								<p className="text-left" id="WhyStringComparison">
+									<strong>Why String Comparison?</strong>
+								</p>
+
+								<p className="text-left">
 									{" "}
 									String Comparison was built because I find myself compare two
 									strings very frequently
+								</p>
+								<br />
+								<p className="text-left" id="techUsed">
+									<strong>Technologies used</strong>
 								</p>
 							</Box>
 						</Modal>
