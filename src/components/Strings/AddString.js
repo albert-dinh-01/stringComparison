@@ -322,8 +322,12 @@ const AddString = (props) => {
 						aria-describedby="parent-modal-description"
 					>
 						<Box sx={style}>
-							StringComparison was built because I find myself compare two
-							strings very frequently
+							<strong>Why String Comparison?</strong>
+							<p>
+								{" "}
+								String Comparison was built because I find myself compare two
+								strings very frequently
+							</p>
 						</Box>
 					</Modal>
 				</div>
