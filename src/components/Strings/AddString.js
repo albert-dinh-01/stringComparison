@@ -10,6 +10,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
+import { v4 as uuidv4 } from "uuid";
 
 const style = {
 	position: "absolute",
@@ -122,6 +123,7 @@ const AddString = (props) => {
 		var time =
 			today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 		var dateTime = date + " " + time;
+		var uniqueIds = uuidv4();
 		if (
 			enteredString1 === enteredString2 &&
 			enteredString1 !== "" &&
@@ -133,7 +135,8 @@ const AddString = (props) => {
 					s1: enteredString1,
 					s2: enteredString2,
 					result: true,
-					date: dateTime
+					date: dateTime,
+					id: uniqueIds
 				}
 			]);
 			setAreStringsEqual(true);
@@ -144,7 +147,8 @@ const AddString = (props) => {
 					s1: enteredString1,
 					s2: enteredString2,
 					result: false,
-					date: dateTime
+					date: dateTime,
+					id: uniqueIds
 				}
 			]);
 			setAreStringsEqual(false);
