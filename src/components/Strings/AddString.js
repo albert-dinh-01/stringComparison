@@ -183,6 +183,17 @@ const AddString = (props) => {
 								<p className="text-left" id="techUsed">
 									<strong>Technologies used</strong>
 								</p>
+								<ul>
+									<li className="text-left" id="front">
+										- React
+									</li>
+									<li className="text-left" id="style">
+										- Styled with Tailwind CSS
+									</li>
+									<li className="text-left" id="deployment">
+										- Deployed with AWS Amlify
+									</li>
+								</ul>
 							</Box>
 						</Modal>
 					</div>
