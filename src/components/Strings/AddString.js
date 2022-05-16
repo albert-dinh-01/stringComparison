@@ -153,7 +153,7 @@ const AddString = (props) => {
 					<div className="welcometext font-bold text-4xl">
 						Welcome to String Comparison!
 					</div>
-					<div className="p-0 m-0 bg-red-300" id="info">
+					<div className="p-0 m-0" id="info">
 						<IconButton
 							color="secondary"
 							aria-label="add an alarm"
