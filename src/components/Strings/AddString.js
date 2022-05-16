@@ -136,7 +136,7 @@ const AddString = (props) => {
 					s2: enteredString2,
 					result: true,
 					date: dateTime,
-					id: uniqueIds
+					id1: uniqueIds
 				}
 			]);
 			setAreStringsEqual(true);
@@ -148,12 +148,17 @@ const AddString = (props) => {
 					s2: enteredString2,
 					result: false,
 					date: dateTime,
-					id: uniqueIds
+					id1: uniqueIds
 				}
 			]);
 			setAreStringsEqual(false);
 		}
 	};
+
+	const deletePair = (uid) => {
+		console.log("unique uid mofo", uid);
+	};
+
 	return (
 		<Card>
 			<form>
@@ -321,7 +326,10 @@ const AddString = (props) => {
 								</p>
 								<div id="stringList">
 									{comparedPairs.map((pair) => (
-										<div className="flex justify-between bg-emerald-100 rounded-lg m-3.5 p-2">
+										<div
+											className="flex justify-between bg-emerald-100 rounded-lg m-3.5 p-2"
+											id={pair.id1}
+										>
 											<div className="max-w-[70%] w-auto" id="stringsContainer">
 												<div
 													className="p-0 m-0 text-left overFlowTest"
@@ -342,8 +350,20 @@ const AddString = (props) => {
 													Time: {pair.date}
 												</div>
 											</div>
-											<div className="p-0 m-0 text-left" id="outcome">
-												{pair.result ? "👍🏻" : "👎🏻"}
+											<div className="" id="resultAndDelete">
+												<div className="p-0 m-0 text-center" id="outcome">
+													{pair.result ? "👍🏻" : "👎🏻"}
+												</div>
+												<IconButton
+													color="secondary"
+													aria-label="Delete a compared pair of strings"
+													onClick={() => {
+														deletePair(pair.id1);
+													}}
+													className="text-center"
+												>
+													<DeleteIcon />
+												</IconButton>
 											</div>
 										</div>
 									))}
