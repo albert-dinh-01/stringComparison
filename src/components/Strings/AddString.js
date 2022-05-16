@@ -5,11 +5,13 @@ import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CheckIcon from "@mui/icons-material/Check";
 import HistoryIcon from "@mui/icons-material/History";
+import InfoIcon from "@mui/icons-material/Info";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import json2mq from "json2mq";
+import IconButton from "@mui/material/IconButton";
 
 const style = {
 	position: "absolute",
@@ -54,6 +56,16 @@ const AddString = (props) => {
 	const [areStringsEqual, setAreStringsEqual] = useState(false);
 	const [onHistory, setOnHistory] = useState(false);
 	const [comparedPairs, setComparedPairs] = useState([]);
+	const [openInfo, setOpenInfo] = useState(false);
+
+	const handleOpenInfo = (e) => {
+		e.preventDefault();
+		setOpenInfo(true);
+	};
+	const handleCloseInfo = (e) => {
+		e.preventDefault();
+		setOpenInfo(false);
+	};
 
 	const matches = useMediaQuery(
 		json2mq({
@@ -293,6 +305,28 @@ const AddString = (props) => {
 					</span>
 				</a>{" "}
 				&copy; 2022
+				<div className="p-0 m-0" id="info">
+					<IconButton
+						color="secondary"
+						aria-label="add an alarm"
+						onClick={(e) => {
+							handleOpenInfo(e);
+						}}
+					>
+						<InfoIcon />
+					</IconButton>
+					<Modal
+						open={openInfo}
+						onClose={handleCloseInfo}
+						aria-labelledby="parent-modal-title"
+						aria-describedby="parent-modal-description"
+					>
+						<Box sx={style}>
+							StringComparison was built because I find myself compare two
+							strings very frequently
+						</Box>
+					</Modal>
+				</div>
 			</div>
 		</Card>
 	);
