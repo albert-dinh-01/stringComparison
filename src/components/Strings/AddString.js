@@ -161,10 +161,6 @@ const AddString = (props) => {
 		setComparedPairs(newList);
 	};
 
-	// window.onbeforeunload = function () {
-	// 	localStorage.clear();
-	// };
-
 	return (
 		<Card>
 			<form>
