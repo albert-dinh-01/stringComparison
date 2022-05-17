@@ -67,14 +67,14 @@ const AddString = (props) => {
 	};
 
 	useEffect(() => {
-		const data = localStorage.getItem("my-pairs");
+		const data = sessionStorage.getItem("my-pairs");
 		if (data) {
 			setComparedPairs(JSON.parse(data));
 		}
 	}, []);
 
 	useEffect(() => {
-		localStorage.setItem("my-pairs", JSON.stringify(comparedPairs));
+		sessionStorage.setItem("my-pairs", JSON.stringify(comparedPairs));
 	});
 
 	const handleOpenCompare = (e) => {
@@ -161,9 +161,9 @@ const AddString = (props) => {
 		setComparedPairs(newList);
 	};
 
-	window.onunload = function () {
-		localStorage.clear();
-	};
+	// window.onbeforeunload = function () {
+	// 	localStorage.clear();
+	// };
 
 	return (
 		<Card>
