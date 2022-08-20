@@ -81,6 +81,7 @@ const AddString = (props) => {
 		e.preventDefault();
 		setCompare(true);
 	};
+
 	const handleCloseCompare = (e) => {
 		e.preventDefault();
 		setCompare(false);
@@ -186,7 +187,7 @@ const AddString = (props) => {
 						>
 							<Box sx={style}>
 								<p className="text-left" id="WhyStringComparison">
-									<strong>Why String Comparison?</strong>
+									<strong>Why String Comparison?</strong>3
 								</p>
 
 								<p className="text-left">
