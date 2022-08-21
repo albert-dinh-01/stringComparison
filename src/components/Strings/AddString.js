@@ -61,6 +61,7 @@ const AddString = (props) => {
 		e.preventDefault();
 		setOpenInfo(true);
 	};
+
 	const handleCloseInfo = (e) => {
 		e.preventDefault();
 		setOpenInfo(false);
