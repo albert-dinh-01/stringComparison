@@ -188,7 +188,7 @@ const AddString = (props) => {
 						>
 							<Box sx={style}>
 								<p className="text-left" id="WhyStringComparison">
-									<strong>Why String Comparison?</strong>3
+									<strong>Why String Comparison?</strong>
 								</p>
 
 								<p className="text-left">
